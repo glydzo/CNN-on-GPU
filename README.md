@@ -43,10 +43,10 @@ sudo vi ~/.profile
 **And** add the following lines at the end of the file:
 
 ```bash
-# set PATH for cuda 10.1 installation
-if [ -d "/usr/local/cuda-10.1/bin/" ]; then
-    export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# set PATH for cuda 10.0 installation
+if [ -d "/usr/local/cuda-10.0/bin/" ]; then
+    export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 fi
 ```
 
