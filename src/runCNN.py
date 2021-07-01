@@ -1,5 +1,11 @@
 import os
 import time
+# import warnings filter
+
+from warnings import simplefilter
+# ignore all future warnings
+simplefilter(action='ignore', category=FutureWarning)
+
 import numpy as np
 # import wandb
 from tqdm import tqdm
