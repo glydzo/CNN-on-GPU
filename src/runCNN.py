@@ -1,3 +1,5 @@
+dataset_path = '../res/dataset/'
+
 import os
 import time
 # import warnings filter
@@ -11,7 +13,7 @@ import numpy as np
 from tqdm import tqdm
 from matplotlib import pyplot as plt
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 # 0 = all messages are logged (default behavior)
 # 1 = INFO messages are not printed
 # 2 = INFO and WARNING messages are not printed
@@ -26,9 +28,9 @@ tf.get_logger().setLevel('ERROR')
 # run = wandb.init(project='cnn_optimized_execution')
 
 # set memory growth
-physical_devices = tf.config.experimental.list_physical_devices('GPU')
-assert len(physical_devices) > 0, "Not enough GPU hardware devices available"
-config = tf.config.experimental.set_memory_growth(physical_devices[0], True)
+#physical_devices = tf.config.experimental.list_physical_devices('GPU')
+#assert len(physical_devices) > 0, "Not enough GPU hardware devices available"
+#config = tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 # loading the model
 model = tf.keras.models.load_model('../res/models/my_model_tech_db_filtered2020-05-13_15-05-43_0.094_0.094.h5')
@@ -42,7 +44,7 @@ qp = 22
 elapsed_times = []
 
 # running multiple inferences
-for i in tqdm(range(10000)):
+for i in tqdm(range(100000)):
 
 	start_time = time.time()
 
